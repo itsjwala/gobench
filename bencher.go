@@ -29,7 +29,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	socks5 "github.com/zhvala/gosocks5"
+	// socks5 "github.com/zhvala/gosocks5"
 	"golang.org/x/net/http2"
 )
 
@@ -112,11 +112,12 @@ func createTransport(args *CmdArgs) *http.Transport {
 		transport.Proxy = func(*http.Request) (*url.URL, error) {
 			return url.Parse(args.Proxy)
 		}
-	} else if args.SOCKS5 != "" {
-		transport.Dial = (&socks5.Client{
-			Addr: args.SOCKS5,
-		}).Dial
-	}
+	} 
+	// else if args.SOCKS5 != "" {
+	// 	transport.Dial = (&socks5.Client{
+	// 		Addr: args.SOCKS5,
+	// 	}).Dial
+	// }
 
 	if args.Version == HTTP2 {
 		http2.ConfigureTransport(transport)
