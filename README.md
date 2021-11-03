@@ -1,5 +1,9 @@
 # Gobench
 
+> This is minimal fork of upstream to be able to run for http proxy 
+
+> socks5 proxy code is private in upstream and thus doesn't work in this fork
+
 ![Scrutinizer Build](https://img.shields.io/badge/build-pass-green.svg)![Go Report Card](https://goreportcard.com/badge/github.com/zhvala/gobench)![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
 
 `Gobench` is a simple web benchmark written in `golang`. It use `goroutine` to simulate concurrent HTTP requests. 
@@ -14,7 +18,7 @@
 ## Installation
 
 ```bash
-go get -u github.com/zhvala/gobench/cmd/gobench
+go get github.com/itsjwala/gobench
 # adding $GOPATH/bin into your $PATH may be needed
 export PATH=$GOPATH/bin:$PATH
 ```
